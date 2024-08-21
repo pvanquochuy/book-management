@@ -1,11 +1,10 @@
 package com.example.identity_service.dto.request;
 
-
 import java.time.LocalDate;
 
-import com.example.identity_service.validator.DobConstraint;
 import jakarta.validation.constraints.Size;
 
+import com.example.identity_service.validator.DobConstraint;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

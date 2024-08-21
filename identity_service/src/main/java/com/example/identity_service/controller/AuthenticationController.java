@@ -1,18 +1,16 @@
 package com.example.identity_service.controller;
 
-
 import java.text.ParseException;
 
-import com.example.identity_service.dto.request.*;
-import com.example.identity_service.service.AuthenticationService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.identity_service.dto.request.*;
 import com.example.identity_service.dto.response.AuthenticationResponse;
 import com.example.identity_service.dto.response.IntrospectResponse;
-
+import com.example.identity_service.service.AuthenticationService;
 import com.nimbusds.jose.JOSEException;
 
 import lombok.AccessLevel;
