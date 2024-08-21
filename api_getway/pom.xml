@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>22</java.version>
 		<spring-cloud.version>2023.0.1</spring-cloud.version>
+		<projectlombok-lombok.version>1.18.34</projectlombok-lombok.version>
 	</properties>
 
 	<dependencies>
@@ -24,6 +25,13 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${projectlombok-lombok.version}</version>
+			<scope>provided</scope>
 		</dependency>
 
 		<!-- Corrected spring-cloud-starter-gateway dependency -->
