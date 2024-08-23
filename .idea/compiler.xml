@@ -9,7 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api_getway" />
       </profile>
-      <profile name="Annotation profile for profile_service" enabled="true">
+      <profile name="Annotation profile for identity_service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -28,6 +28,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="identity-service" target="21" />
+      <module name="notification_service" target="22" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
