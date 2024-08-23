@@ -1,6 +1,5 @@
 package com.example.identity_service.dto.response;
 
-
 import java.util.Date;
 
 import lombok.*;

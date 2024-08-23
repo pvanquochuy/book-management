@@ -1,6 +1,5 @@
 package com.example.identity_service.entity;
 
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
