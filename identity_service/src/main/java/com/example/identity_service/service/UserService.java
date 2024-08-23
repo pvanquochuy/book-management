@@ -3,8 +3,6 @@ package com.example.identity_service.service;
 import java.util.HashSet;
 import java.util.List;
 
-import com.example.identity_service.mapper.ProfileMapper;
-import com.example.identity_service.repository.httpclient.ProfileClient;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -18,16 +16,16 @@ import com.example.identity_service.entity.Role;
 import com.example.identity_service.entity.User;
 import com.example.identity_service.exception.AppException;
 import com.example.identity_service.exception.ErrorCode;
+import com.example.identity_service.mapper.ProfileMapper;
 import com.example.identity_service.mapper.UserMapper;
 import com.example.identity_service.repository.RoleRepository;
 import com.example.identity_service.repository.UserRepository;
+import com.example.identity_service.repository.httpclient.ProfileClient;
 
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 @Service
 @RequiredArgsConstructor
@@ -57,7 +55,6 @@ public class UserService {
         profileRequest.setUserId(user.getId());
 
         profileClient.createProfile(profileRequest);
-
 
         return userMapper.toUserResponse(user);
     }

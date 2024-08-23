@@ -1,6 +1,5 @@
 package com.example.identity_service.entity;
 
-
 import java.util.Set;
 
 import jakarta.persistence.Entity;
