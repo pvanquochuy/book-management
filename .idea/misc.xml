@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/profile_service/pom.xml" />
         <option value="$PROJECT_DIR$/api_getway/pom.xml" />
         <option value="$PROJECT_DIR$/notification_service/pom.xml" />
+        <option value="$PROJECT_DIR$/post_service/pom.xml" />
       </list>
     </option>
   </component>
