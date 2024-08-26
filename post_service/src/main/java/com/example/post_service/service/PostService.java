@@ -6,6 +6,7 @@ import com.example.post_service.dto.response.PostResponse;
 import com.example.post_service.entity.Post;
 import com.example.post_service.mapper.PostMapper;
 import com.example.post_service.repository.PostRepository;
+import com.example.post_service.utils.DateTimeFormatter;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -26,6 +27,7 @@ import java.util.List;
 public class PostService {
     PostRepository postRepository;
     PostMapper postMapper;
+    private final DateTimeFormatter dateTimeFormatter;
 
     public PostResponse createPost(PostRequest request){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -48,6 +50,12 @@ public class PostService {
         Sort sort = Sort.by("createdDate").descending();
         Pageable pageable = PageRequest.of(page - 1,size , sort);
         var pageData = postRepository.findAllByUserId(userId, pageable);
+
+        var postList = pageData.getContent().stream().map(post -> {
+            var postResponse = postMapper.toPostResponse(post);
+            postResponse.setCreated(dateTimeFormatter.format(post.getCreatedDate()));
+            return postResponse;
+        }).toList();
 
         return PageResponse.<PostResponse>builder()
                 .currentPage(page)
